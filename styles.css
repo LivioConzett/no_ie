@@ -1,0 +1,417 @@
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /*font-weight: bold;*/
+    user-select: none;
+}
+
+.hourglasscursor{
+    cursor: url('/img/hourglass.png'), auto;
+}
+.normalcursor{
+    cursor: default;
+}
+
+.pointercursor{
+    cursor: pointer;
+}
+
+.desktop{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #378DA7;
+}
+
+.desktopshortcut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    /* height: 100px; */
+    /* background-color: green; */
+    /* padding:10px; */
+}
+
+.desktopshortcutholder{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    /* height: 100px; */
+    /* background-color: green; */
+    /* padding:10px; */
+}
+
+.desktopshortcutholderactive{
+    border: dotted 1px black;
+}
+
+.desktopshortcutimgholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.desktopshortcutimg{
+    width:  70px;
+    height: 70px;
+}
+
+.desktopshortcuttext{
+    text-align: center;
+    font-size: 17px;
+}
+
+.toolbar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    border-top: solid 2px white;
+    background-color: #C3C6CB;
+}
+
+.toolbarvr{
+    height: 90%;
+    width: 0px;
+    margin-left: 5px;
+    /* background-color: green; */
+    border-right: solid 1px white;
+    border-left: solid 1px grey;
+}
+
+.toolbarholdthingy{
+    height: 70%;
+    width: 6px;
+    margin-left: 5px;
+    /* background-color: green; */
+    border-radius: 6px;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    border-left: solid 2px white;
+    border-right: solid 2px grey;
+}
+
+.toolbarimg{
+    margin-left: 5px;
+    height:70%;
+}
+
+.spacer{
+    flex:1;
+}
+
+.startbutton{
+    height: 90%;
+    width: 100px;
+    background-color: none;
+    border-top: solid 2px white;
+    border-left: solid 2px white;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    margin-left: 4px;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.startbuttonActive{
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+
+    line-height: 33px;
+}
+
+.timebox{
+    height: 90%;
+    width: 150px;
+    background-color: none;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+    margin-right: 4px;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.menuclickoverlay{
+    width:100%;
+    height:100%;
+    background-color: green;
+    visibility: hidden;
+}
+
+.menubox{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 500px;
+    background-color: #C3C6CB;
+    bottom: 35px;
+    left:0;
+
+    border-top: solid 2px white;
+    border-left: solid 2px white;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+
+    opacity: 0;
+
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: max-height 0.1s;
+
+}
+
+.windowsbanner{
+    position:relative;
+    height:100%;
+    width:40px;
+    background-image: linear-gradient(black,#000080);
+}
+
+.windowsbannertext{
+    position: absolute;
+    height:30px;
+    width: 400px;
+    font-size: 30px;
+    /* background-color: green; */
+    color:white;
+    bottom:0;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+}
+
+.menuitemsholder{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width:100%;
+    /* background-color: green; */
+}
+
+.menuitem{
+    display: flex;
+    flex-direction: row;
+    height:50px;
+}
+
+.menuitem:hover{
+    background-color: #000080;
+    color:white;
+}
+
+.menuitemimgholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+}
+
+.menuitemimg{
+    width:30px;
+    height:30px;
+}
+
+.menuitemtext{
+    height:100%;
+    width:100%;
+    
+    /* text-align: center; */
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.clippyholder{
+    position: absolute;
+    width: 200px;
+    height:200px;
+    right: 20px;
+    /* background-color: green; */
+    bottom: 50px;
+}
+
+.clippyimg{
+    width:100%;
+    height:100%;
+}
+
+
+.clippybubbleholder{
+    position: absolute;
+    right: 150px;
+    bottom: 250px;
+    width: 200px;
+    height:200px;
+    opacity: 0;
+}
+
+.opacitytransition{
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.clippyspeechbubble {
+	position: relative;
+	background: #FFFFCB;
+    border-radius: 20px;
+    width:100%;
+    height:100%;
+    border: 2px black solid;
+    
+
+}
+
+.clippyspeechbubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 60%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #FFFFCB;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.clippyspeechtext{
+    margin:10px;
+}
+
+.clippybuttonholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.clippybubblebutton{
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+.window{
+    visibility: hidden;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+    background-color: #C3C6CB;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    top: 50vh;
+    left: 50%;
+
+    transform: translate(-250px,-100px);
+}
+
+.windowtop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:99%;
+    height:25px;
+    background-color: #000080;
+    
+    color: white;
+    vertical-align: middle;
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+.exit{
+    margin-right:2px;
+    height:20px;
+    width:20px;
+    color:grey;
+    background-color: #C3C6CB;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.windowtextholder{
+    margin-top:5px;
+    width:90%;
+
+}
+
+.windowbuttonholder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.windowbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width:100px;
+    height: 40px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+
+    cursor: pointer;
+}
+
+.windowbuttontextborder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    border: dotted 1px black;
+}
+
+.windowbuttonActive{
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+
+    line-height: 33px;
+}
